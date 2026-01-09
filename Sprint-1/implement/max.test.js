@@ -10,14 +10,10 @@ You should implement this function in max.js, and add tests for it in this file.
 We have set things up already so that this file can see your function from the other file.
 */
 
-const findMax = require("./max.js");
-
 // Given an empty array
 // When passed to the max function
 // Then it should return -Infinity
 // Delete this test.todo and replace it with a test.
-test.todo("given an empty array, returns -Infinity");
-
 // Given an array with one number
 // When passed to the max function
 // Then it should return that number
@@ -41,3 +37,36 @@ test.todo("given an empty array, returns -Infinity");
 // Given an array with only non-number values
 // When passed to the max function
 // Then it should return the least surprising value given how it behaves for all other inputs
+
+
+const findMax = require("./max.js");
+
+describe("findMax", () => {
+  it("given an empty array, returns -Infinity", () => {
+    expect(findMax([])).toBe(-Infinity);
+  });
+
+  it("given an array with one number, returns that number", () => {
+    expect(findMax([5])).toBe(5);
+  });
+
+  it("returns the largest number from positive and negative numbers", () => {
+    expect(findMax([-10, 5, 3])).toBe(5);
+  });
+
+  it("returns the closest number to zero when all are negative", () => {
+    expect(findMax([-10, -3, -7])).toBe(-3);
+  });
+
+  it("returns the largest decimal number", () => {
+    expect(findMax([1.5, 2.7, 2.3])).toBe(2.7);
+  });
+
+  it("ignores non-numeric values", () => {
+    expect(findMax(["hey", 10, "hi", 60, 10])).toBe(60);
+  });
+
+  it("returns -Infinity when array has only non-numeric values", () => {
+    expect(findMax(["a", null, undefined])).toBe(-Infinity);
+  });
+});
