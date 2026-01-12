@@ -27,12 +27,12 @@ E.g. dedupe([1, 2, 1]) target output: [1, 2]
 
 
 describe("dedupe", () => {
-  // Test 1: empty array
+  // Test 1:empty array
   it("returns an empty array when given an empty array", () => {
     expect(dedupe([])).toEqual([]);
   });
 
-  // Test 2: array with no duplicates
+  // Test 2:array with no duplicates
   it("returns a copy of the array if there are no duplicates", () => {
     const arr = [1, 2, 3];
     expect(dedupe(arr)).toEqual([1, 2, 3]);
@@ -40,13 +40,13 @@ describe("dedupe", () => {
     expect(arr).toEqual([1, 2, 3]);
   });
 
-  // Test 3: array with duplicates (numbers)
+  // Test 3: array with duplicates(numbers)
   it("removes duplicate numbers, preserving first occurrences", () => {
     expect(dedupe([5, 1, 1, 2, 3, 2, 5, 8])).toEqual([5, 1, 2, 3, 8]);
     expect(dedupe([1, 2, 1])).toEqual([1, 2]);
   });
 
-  // Test 4: array with duplicates (strings)
+  // Test 4: array with duplicates(strings)
   it("removes duplicate strings, preserving first occurrences", () => {
     expect(dedupe(["a", "a", "a", "b", "b", "c"])).toEqual(["a", "b", "c"]);
     expect(dedupe(["x", "y", "x", "z", "y"])).toEqual(["x", "y", "z"]);

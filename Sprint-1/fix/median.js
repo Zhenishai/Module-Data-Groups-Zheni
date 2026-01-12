@@ -20,7 +20,7 @@ function calculateMedian(list) {
     return null;
   }
 
-  // Unit 4: sort numbers (without mutating input)
+  // Unit 4: sort numbers(without mutating input)
   const sortedNumbers = [...numbers].sort((a, b) => a - b);
 
   // Unit 5: find middle index
